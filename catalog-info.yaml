@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: pedido-teste-bp
+  description: Serviço gerado pela PoC Backstage + ArchUnit
+  annotations:
+    github.com/project-slug: alecomputacao01/pedido-teste-bp
+  tags:
+    - java
+    - spring-boot-4
+    - postgresql
+    - hexagonal
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests
