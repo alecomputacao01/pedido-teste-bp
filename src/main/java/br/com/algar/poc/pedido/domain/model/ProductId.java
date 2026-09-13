@@ -3,6 +3,8 @@ package br.com.algar.poc.pedido.domain.model;
 import java.util.Objects;
 import java.util.UUID;
 
+//teste
+
 /** Value Object — identidade do Aggregate {@link Product}. */
 public final class ProductId {
 
