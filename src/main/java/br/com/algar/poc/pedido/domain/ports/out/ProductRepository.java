@@ -4,6 +4,7 @@ import br.com.algar.poc.pedido.domain.model.Product;
 import br.com.algar.poc.pedido.domain.model.ProductId;
 import br.com.algar.poc.pedido.domain.model.Sku;
 
+import java.util.List;
 import java.util.Optional;
 
 /** Porta de saída (driven port) — persistência do Aggregate, sem detalhe de infraestrutura. */
@@ -14,4 +15,6 @@ public interface ProductRepository {
     Optional<Product> findById(ProductId id);
 
     boolean existsBySku(Sku sku);
+
+    List<Product> findAll();
 }

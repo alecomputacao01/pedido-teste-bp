@@ -6,6 +6,7 @@ import br.com.algar.poc.pedido.domain.model.Sku;
 import br.com.algar.poc.pedido.domain.ports.out.ProductRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -31,5 +32,12 @@ public class ProductRepositoryAdapter implements ProductRepository {
     @Override
     public boolean existsBySku(Sku sku) {
         return jpaRepository.existsBySku(sku.value());
+    }
+
+    @Override
+    public List<Product> findAll() {
+        return jpaRepository.findAll().stream()
+                .map(ProductMapper::toDomain)
+                .toList();
     }
 }

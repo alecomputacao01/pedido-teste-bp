@@ -61,4 +61,16 @@ class ProductRepositoryAdapterIT {
 
         assertThat(adapter.existsBySku(sku)).isTrue();
     }
+
+    @Test
+    void findAllDeveRetornarOsProdutosPersistidos() {
+        var a = Product.register(ProductId.newId(), Sku.of("AAA-1111"), "Teclado", new BigDecimal("30.00"));
+        var b = Product.register(ProductId.newId(), Sku.of("BBB-2222"), "Mouse gamer", new BigDecimal("20.00"));
+        adapter.save(a);
+        adapter.save(b);
+
+        var all = adapter.findAll();
+
+        assertThat(all).extracting(Product::sku).contains(a.sku(), b.sku());
+    }
 }

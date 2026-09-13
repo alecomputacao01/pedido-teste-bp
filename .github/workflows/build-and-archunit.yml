@@ -61,4 +61,8 @@ jobs:
       - name: Deploy no namespace demo-apps
         run: |
           kubectl apply -n demo-apps -f k8s/
+          # A tag da imagem é fixa (${{ steps.component.outputs.name }}:local, imagePullPolicy:
+          # Never) — o "kubectl apply" sozinho não detecta mudança de spec quando só o conteúdo da
+          # imagem muda, então o pod antigo continuaria rodando o jar antigo sem este restart forçado.
+          kubectl rollout restart deployment/${{ steps.component.outputs.name }} -n demo-apps
           kubectl rollout status deployment/${{ steps.component.outputs.name }} -n demo-apps --timeout=120s
