@@ -3,6 +3,8 @@ package br.com.algar.poc.pedido.domain.model;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+//teste
+
 /**
  * Aggregate Root do bounded context Catálogo. Sem dependência de framework —
  * regra de negócio pura, verificada pelo ArchUnit (ver arch.HexagonalArchitectureTest).

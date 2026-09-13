@@ -49,16 +49,16 @@ jobs:
         run: echo "name=$(grep -m1 '^  name:' k8s/app-deployment.yaml | awk '{print $2}')" >> "$GITHUB_OUTPUT"
 
       - name: Build da imagem (docker.sock do node, montado no runner)
-        run: docker build -t :local .
+        run: docker build -t ${{ steps.component.outputs.name }}:local .
 
       - name: Secret do banco (a partir de GitHub Actions secrets — nunca committed em texto puro)
         run: |
-          kubectl create secret generic -db -n demo-apps \
-            --from-literal=username="" \
-            --from-literal=password="" \
+          kubectl create secret generic ${{ steps.component.outputs.name }}-db -n demo-apps \
+            --from-literal=username="${{ secrets.DB_USERNAME }}" \
+            --from-literal=password="${{ secrets.DB_PASSWORD }}" \
             --dry-run=client -o yaml | kubectl apply -f -
 
       - name: Deploy no namespace demo-apps
         run: |
           kubectl apply -n demo-apps -f k8s/
-          kubectl rollout status deployment/ -n demo-apps --timeout=120s
+          kubectl rollout status deployment/${{ steps.component.outputs.name }} -n demo-apps --timeout=120s
