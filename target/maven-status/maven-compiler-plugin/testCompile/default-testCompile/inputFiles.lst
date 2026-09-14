@@ -1,0 +1,7 @@
+/opt/algar/teste/Arquitetura/PoCs/pedido-teste-bp/src/test/java/br/com/algar/poc/pedido/adapters/in/web/ProductControllerTest.java
+/opt/algar/teste/Arquitetura/PoCs/pedido-teste-bp/src/test/java/br/com/algar/poc/pedido/adapters/out/persistence/ProductRepositoryAdapterIT.java
+/opt/algar/teste/Arquitetura/PoCs/pedido-teste-bp/src/test/java/br/com/algar/poc/pedido/application/usecase/ListProductsServiceTest.java
+/opt/algar/teste/Arquitetura/PoCs/pedido-teste-bp/src/test/java/br/com/algar/poc/pedido/application/usecase/RegisterProductServiceTest.java
+/opt/algar/teste/Arquitetura/PoCs/pedido-teste-bp/src/test/java/br/com/algar/poc/pedido/arch/HexagonalArchitectureTest.java
+/opt/algar/teste/Arquitetura/PoCs/pedido-teste-bp/src/test/java/br/com/algar/poc/pedido/domain/model/ProductTest.java
+/opt/algar/teste/Arquitetura/PoCs/pedido-teste-bp/src/test/java/br/com/algar/poc/pedido/domain/model/SkuTest.java

@@ -1,0 +1,7 @@
+br/com/algar/poc/pedido/arch/HexagonalArchitectureTest.class
+br/com/algar/poc/pedido/adapters/in/web/ProductControllerTest.class
+br/com/algar/poc/pedido/adapters/out/persistence/ProductRepositoryAdapterIT.class
+br/com/algar/poc/pedido/application/usecase/ListProductsServiceTest.class
+br/com/algar/poc/pedido/application/usecase/RegisterProductServiceTest.class
+br/com/algar/poc/pedido/domain/model/ProductTest.class
+br/com/algar/poc/pedido/domain/model/SkuTest.class
