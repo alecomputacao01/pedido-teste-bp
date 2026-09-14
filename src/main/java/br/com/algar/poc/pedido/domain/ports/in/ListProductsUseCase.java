@@ -4,6 +4,8 @@ import br.com.algar.poc.pedido.domain.model.Product;
 
 import java.util.List;
 
+//teste 14/09
+
 /** Porta de entrada (driving port) — lista todos os produtos cadastrados. */
 public interface ListProductsUseCase {
 
